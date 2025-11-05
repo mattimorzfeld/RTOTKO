@@ -28,7 +28,7 @@ Occam_Out = Occam(OccamConfig, ModelConfig, DataConfig);
 %% ------------------------------------------------------------------------
 % Configure RTO
 RTOConfig.nos       = 500;
-RTOConfig.muBounds  = [-6 2]; 
+RTOConfig.muBounds  = [-2 2]; 
 RTOConfig.muStart   = 0.5;      % log scale 
 RTOConfig.TKOFlag   = 1;        % search for mu or keep it 
 RTOConfig.MaxRMS    = 3;        % throw out models with large RMS
@@ -45,5 +45,5 @@ PlotRTOPosterior(RTO_Out.modelEst,RTO_Out.predRes,RTO_Out.RMS,Occam_Out.modelEst
 
 % Occam
 PrintOutputOccam
-% PlotOccamResults
+PlotOccamResults
 %% ------------------------------------------------------------------------
