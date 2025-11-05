@@ -1,0 +1,9 @@
+function uOpt = MyMinLS2(uo,ypert,mp,mu,ModelConfig,DataConfig,D)
+func = @(u)funcF2(u,ypert,mp,mu,ModelConfig,DataConfig,D);
+options = optimoptions('lsqnonlin','Algorithm','trust-region-reflective', ...
+    'SpecifyObjectiveGradient',false, ...
+    'Diagnostics','off', ...
+    'Display','off');
+n = length(uo);
+uOpt = lsqnonlin(func, uo, -2*ones(n,1), 6*ones(n,1), options);
+end
